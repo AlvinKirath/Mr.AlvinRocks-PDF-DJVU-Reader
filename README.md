@@ -1,7 +1,3 @@
-# Mr.AlvinRocks-PDF-DJVU-Reader
-A high-performance, feature-rich PDF &amp; Document reader with advanced annotation, infinite notes, and ultra-fast DjVu support.
-That's a bold way to put it! Here is the revised Mr.AlvinRocks' PDF/DJVU Reader README. It includes the updated installation instructions and a very clear "Default App" directive for those who want a seamless experience.
-
 📑 Mr.AlvinRocks' PDF/DJVU Reader
 ⚠️ DISCLAIMER: This entire application was built from scratch in just four days. Alvin, the lead architect, began this project with zero formal background in Computer Science. By leveraging advanced Artificial Intelligence as a collaborative partner, this project serves as a testament to what is possible when human intent meets AI execution.
 
