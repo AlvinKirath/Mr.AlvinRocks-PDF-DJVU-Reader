@@ -1,58 +1,34 @@
-📑 Mr.AlvinRocks' PDF/DJVU Reader
-⚠️ DISCLAIMER: This entire application was built from scratch in just four days. Alvin, the lead architect, began this project with zero formal background in Computer Science. By leveraging advanced Artificial Intelligence as a collaborative partner, this project serves as a testament to what is possible when human intent meets AI execution.
+### **🚀 The V3 "Precision Engine" (Performance Updates)**
+* **Dirty Rect Rendering**: The rendering engine now uses a "Smart Dirty Rect" system. Instead of refreshing the whole canvas, it only repaints the tiny zone where your pen moves, eliminating drawing lag even on massive 4K documents.
+* **Aggressive RAM Hard-Lock**: Added a 128MB hard-cap on Qt’s internal image cache and implemented `fitz.TOOLS.store_shrink` calls on every page turn. This slashes RAM usage and prevents the "memory creep" crashes common in traditional readers.
+* **O(1) Jump Navigation**: Page jumping now uses direct mathematical coordinate mapping instead of iterative loops, enabling instantaneous navigation through 2,000+ page files.
+* **Startup Diagnostics**: A new pre-flight dependency check ensures you have `PyMuPDF` and `PySide6` installed, providing clear native Windows error messages if anything is missing.
 
-🌟 Why is this the best PDF option?
-Most PDF readers are "Passive". They let you look, but they make it hard to work. Mr.AlvinRocks' Reader is an "Active" environment. It bridges the gap between a document viewer and a digital journal, allowing you to harvest information from PDFs and organize it in a high-res, infinite canvas without ever leaving the app.
+### **✨ New Feature Highlights**
+* **Polygon Lasso Tool**: Move beyond rectangles. Use the freehand lasso (Right-Click) to select complex groups of ink strokes or extract irregular image regions at 3x resolution.
+* **Native Quality Image Slicing**: Implemented a "NATIVE QUALITY FIX" for pasting. The app now slices original high-res pixel buffers into your notes, ensuring text stays razor-sharp even when zoomed in 400%.
+* **Integrated Text Tool**: You can now insert and position high-res text notes directly onto any document or blank canvas.
+* **Session Restoration**: A one-click "Restore Session" button on the Home Tab instantly re-opens all your previous tabs, restoring your exact page, zoom, and rotation state.
+* **Silent Background Loading**: You can now right-click documents on the Home Dashboard to "Silent Open" them in the background without losing your current focus.
+* **Dynamic Ink Scaling**: Ink thickness now automatically normalizes based on the document’s true pixel resolution—ensuring your pen feels identical whether you’re on a low-res scan or a 4K vector PDF.
 
-🚀 Key Feature Breakdown
-1. High-Performance Hybrid Engine
-Lazy-Loading DjVu Core: Unlike traditional readers that crash while loading 500MB DjVu files, our engine renders only the active viewport. It utilizes a custom C++ integration with DjVuLibre for lightning-fast page flipping.
+### **🎨 UI/UX & Quality of Life**
+* **Edge-to-Edge Fit**: Rebuilt the "Fit to Width" logic to eliminate "dogshit" side gaps, providing a true edge-to-edge reading experience.
+* **Precision Eraser**: Added a minimalist crosshair eraser cursor and improved stylus interpolation for buttery-smooth, high-speed erasing.
+* **Non-Destructive Workflows**: The eraser now operates on an "event-based" system, allowing you to Undo/Redo entire erase strokes rather than just individual points.
+* **Expanded Dashboard**: The Home Tab now tracks up to 8 Frequently Read and 8 Recent documents with high-efficiency background thumbnail generation.
 
-Universal Format Support: Natively handles PDF, DjVu, EPUB, XPS, CBZ, and all major image formats (WebP, TIFF, JPEG).
+### **🔧 Professional Shortcuts**
+* **S** - Continuous Scrolling Mode (Edge-to-Edge)
+* **D** - Single Page Mode (Fit to Window)
+* **F** - Toggle Fullscreen
+* **Ctrl + Drag** - Instant High-Res Region Copy
+* **Right-Click (Hold)** - Lasso Selection Mode
+* **Space** - Toggle Toolbar visibility in Focus Mode
 
-Adaptive Geometry: Specifically tuned for all displays. Whether you are on a 720p TV or a 4K monitor, our QTimer layout synchronization ensures your "Fit Page" and "Continuous" modes are pixel-perfect every time.
+### **🛠️ Setup**
+1.  **Clone**: `git clone https://github.com/AlvinKirath/Mr.AlvinRocks-Reader.git`
+2.  **Dependencies**: `pip install PySide6 PyMuPDF`
+3.  **Run**: `python PDFViewer.py`
 
-2. The "Lossless Snap" Ecosystem
-3x High-Res Snapping: Stop taking blurry screenshots. Our Snap tool reaches into the PDF source code to extract regions at 3x their native resolution.
-
-Instant Journaling: "Snap-to-Note" functionality automatically opens a Blank Note tab and pastes your selection at high quality, allowing for instant annotation and study.
-
-Infinite Verticality: Our Blank Notes use an "Auto-Expand" engine. As you reach the bottom of your note, the canvas automatically grows, giving you a limitless space to write and paste.
-
-3. Professional Presentation & Markup
-Pulsing Laser Pointer: A presentation-grade tool with a mathematical "glow" animation that makes remote sharing and screen recording more engaging.
-
-Lasso Tool (Polygon Selection): Move beyond rectangles. Select complex groups of ink strokes or specific image regions with a free-hand lasso.
-
-Pressure-Sensitive Ink: Native support for stylus pressure and hardware erasers, providing a pen-on-paper feel.
-
-Text-Aware Highlighting: A smart toggle that lets you "paint" highlights that automatically snap to the underlying PDF text layers.
-
-4. Advanced Navigation & UI
-Multi-Tab Session Memory: The app remembers exactly where you left off. Every document's zoom level, rotation, dark mode state, and specific page number are saved to the Windows Registry automatically.
-
-Background Search Indexing: Search 2,000+ page documents without the UI freezing. We use processEvents() threading to keep the app responsive while a real-time progress bar tracks your search results.
-
-Split-View Mode: Read two different parts of the same document (or two different files) side-by-side in a single window.
-
-🎨 Professional Shortcuts (The Speed Workflow)
-S - Continuous Scrolling Mode (Fit to Width)
-
-D - Single Page Mode (Fit to Window)
-
-F - Fullscreen (Focus Mode)
-
-Space - Toggle UI visibility while in Fullscreen
-
-I / A / V - Instant switch between Pen, Highlighter, and View tools.
-
-Ctrl + B - Toggle Sidebar (Bookmarks and Thumbnails)
-
-🛠️ Installation & Setup
-Clone the Repo: git clone https://github.com/AlvinKirath/Mr.AlvinRocks-Reader.git
-
-Install Dependencies: pip install PySide6 PyMuPDF
-
-Run: python PDFViewer.py
-
-⚙️ Pro-Tip for Default App usage: If you want to use this as your default reader for PDF and DjVu files, you should convert the Python script into an executable (.exe) using a tool like Inno Setup. Windows requires an executable file to reliably set a program as the "Default App" in your system settings.
+**Pro-Tip**: For the best experience on Windows, convert the script to an `.exe` using Inno Setup or PyInstaller to set it as your system's default PDF/DjVu handler.
